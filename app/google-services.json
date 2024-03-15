@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64189502670",
+    "project_id": "e-commerce-9dc89",
+    "storage_bucket": "e-commerce-9dc89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64189502670:android:3c286dde2312902589ec9f",
+        "android_client_info": {
+          "package_name": "com.xero.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGJidk05EqK5e4GR-PfjBPuZZqJ7FhAMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
