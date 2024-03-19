@@ -31,6 +31,117 @@ now in build.gradle(app module), enable viewbinding
 now edit the activity_main.xml (check the codes to understand)
 after that edit mainactivity.kt
 
+built ecommerce admin app
+
+back to ecommerce
+
+...
+
+start with fragment_home.xml
+check the codes to understand
+
+now we need to create some layout pages...
+we need to create layout item for category and product
+create layout resource file, name it layout_category_item
+check codes to understand
+
+after creating both layout(check codes to understand)
+go to HomeFragment.kt
+
+create model package, and copy both model package from admin app to this app
+create adapter package, and copy both adapter from admin app to here
+create a new product adapter
+check codes to understand
+
+to enable nested scroll, check home fragment xml
+
+for clickable category... (01.58.00)
+make a new package directory named activity, create a new empty activity, name it CategoryActivity
+edit categoryactivity.xml
+add recyclerview into it, constraint it, import R in .kt
+to show the item in recyclerview we need to create a layout resource file in layout folder
+name it item_category_product_layout.xml
+add a card view > constrainlayout > imageview,textview, textview
+set all the constrains and layout property
+now to show this in category activity, go to activity_category.xml and add listitem=item_category_product_layout and layoutmanager = linear layoutmanager
+
+now to get the data from server to these recyclerview...(02.00.00)
+create a new adapter, name it CategoryProductAdapter
+code for categoryproductadapter.kt, check codes to understand
+
+now go to categoryactivity.kt (02.03.00)
+before coding for categoryactivity, we need to add a holder in categoryadapter to enable clicking to open category page
+
+
+        holder.itemView.setOnClickListener{
+                    val intent = Intent(context, CategoryActivity::class.java)
+                    intent.putExtra("cate", list[position].cate)
+                    context.startActivity(intent)
+                }
+
+
+check holder code to understand
+
+now back to categoryactivity.kt...
+check the codes to understand.
+run and test
+
+
+for productdetail...(02.08.10)
+in activity package create a new blank activity name it ProductDetailsActivity
+import imageslideshow github library, to show the product images
+now edit the activity_product_detail.xml
+check codes to understand
+
+
+now we need to implement add to cart functionality...(02.22.57)
+import room library and kotlin coroutine
+for room db, create a new package name it roomDb
+in roomDb package, create a new kotlin class of type data, name it ProductModel
+check codes to understand
+now create a interface class for doa, name it ProductDao,
+check code to understand
+now create a new kotlin class for database, name it AppDatabase
+check code to understand
+database work over
+
+to add to cart?go to cart...(02.34.18)
+go to productdetailactivity.kt
+check cartAction()
+also code openCart()
+02.45.00 -> cart to home guide
+
+now code for cart page...(02.46.00)
+layout>new layout res file>layout_cart_item
+check code to understand
+after layout_cart_item -> fragment_cart
+check code to understand
+now create adapter for this
+adapter>cartAdapter.kt
+check code
+now go to cartfragment.kt
+check code
+cart will show the products now
+
+to add delete in cart...(02.53.20)
+edit layout_cart_item.xml
+add delete button,
+go to cartadapter.kt
+
+now we will add total product in cart and checkout...(02.57.56)
+edit fragment_cart. add linear layout and other elements inside it
+check codes to understand
+
+now to show actual no of total product in cart...(03.00.43)
+go to cartfragment.kt
+check codes to understand
+
+activity>create a empty activity>AddressActivity.kt...(03.04.00)
+
+
+
+
+
 
 
 
