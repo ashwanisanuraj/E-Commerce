@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#424242"
     tools:context=".MainActivity">
 
 
@@ -14,10 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:navGraph="@navigation/nav"
-        tools:layout_editor_absoluteX="0dp" />
+        app:navGraph="@navigation/nav" />
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
@@ -25,9 +27,9 @@
         android:layout_height="70dp"
         app:iconMargin="8dp"
         app:iconSize="24dp"
-
-        app:backgroundColor="#00FFFFFF"
+        app:backgroundColor="#1F51FF"
         app:indicatorRadius="15dp"
+        app:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

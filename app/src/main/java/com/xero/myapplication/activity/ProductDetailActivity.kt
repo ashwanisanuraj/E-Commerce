@@ -2,10 +2,12 @@ package com.xero.myapplication.activity
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
@@ -28,6 +30,9 @@ class ProductDetailActivity : AppCompatActivity() {
 
         getProductDetails(intent.getStringExtra("id"))
 
+
+
+
         setContentView(binding.root)
     }
 
@@ -46,7 +51,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
                     val slideList = ArrayList<SlideModel>()
                     for (data in list) {
-                        slideList.add(SlideModel(data, ScaleTypes.CENTER_CROP))
+                        slideList.add(SlideModel(data, ScaleTypes.CENTER_INSIDE))
                     }
 
 

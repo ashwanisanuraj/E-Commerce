@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
     android:orientation="vertical"
-    android:paddingLeft="18dp"
-    android:paddingRight="18dp"
-
     tools:context=".Fragment.HomeFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -30,6 +26,7 @@
                     android:id="@+id/sliderImage"
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
+
                     android:scaleType="centerCrop"
                     android:src="@drawable/home" />
 
@@ -47,13 +44,14 @@
                     android:text="Shop By Category"
                     android:textColor="@color/white"
                     android:textSize="18sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="See All"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -75,6 +73,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:text="Shop By Product"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -84,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="See All"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </RelativeLayout>
