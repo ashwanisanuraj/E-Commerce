@@ -39,6 +39,17 @@ class UserProfileActivity : AppCompatActivity() {
                     val userPhone = document.getString("userPhone")
                     binding.textView16.text = "Phone No: $userPhone"
 
+                    val area = document.getString("area")
+                    binding.TextViewArea.text = "Area: $area"
+
+                    val city = document.getString("city")
+                    binding.textViewCity.text = "City: $city"
+
+                    val state = document.getString("state")
+                    binding.textViewState.text = "State: $state"
+
+                    val pin = document.getString("pinCode")
+                    binding.textViewPin.text = "Pincode: $pin"
                 }
             }
     }

@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".activity.UserProfileActivity">
 
+    <Button
+        android:id="@+id/goToEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="42dp"
+        android:text="EDIT PROFILE"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPin" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="150dp"
@@ -43,15 +55,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
-    <Button
-        android:id="@+id/goToEditProfile"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/TextViewArea"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="EDIT PROFILE"
-        android:textColor="@color/white"
-        android:layout_margin="42dp"
-        android:textSize="16sp"
+        android:layout_marginTop="26dp"
+        android:text="Area"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textViewCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="City"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewArea" />
+
+    <TextView
+        android:id="@+id/textViewState"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="State"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCity" />
+
+    <TextView
+        android:id="@+id/textViewPin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pin"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewState" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
