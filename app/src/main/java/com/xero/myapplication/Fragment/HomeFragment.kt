@@ -1,24 +1,20 @@
 package com.xero.myapplication.Fragment
 
-import android.graphics.Color
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.xero.myapplication.R
-import com.xero.myapplication.adapter.CategoryAdapter
 import com.xero.myapplication.adapter.ProductAdapter
 import com.xero.myapplication.databinding.FragmentHomeBinding
 import com.xero.myapplication.model.AddProductModel
-import com.xero.myapplication.model.CategoryModel
 
 class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding
@@ -37,7 +33,6 @@ class HomeFragment : Fragment() {
         if (preference.getBoolean("isCart", false))
             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
 
-        getCategory()
         getProduct()
         getSliderImage()
         return binding.root
@@ -60,19 +55,6 @@ class HomeFragment : Fragment() {
                     list.add(data!!)
                 }
                 binding.productRV.adapter = ProductAdapter(requireContext(), list)
-            }
-    }
-
-    private fun getCategory() {
-        val list = ArrayList<CategoryModel>()
-        Firebase.firestore.collection("category")
-            .get().addOnSuccessListener {
-                list.clear()
-                for (doc in it.documents){
-                    val data = doc.toObject(CategoryModel::class.java)
-                    list.add(data!!)
-                }
-                binding.categoryRV.adapter = CategoryAdapter(requireContext(), list)
             }
     }
 }

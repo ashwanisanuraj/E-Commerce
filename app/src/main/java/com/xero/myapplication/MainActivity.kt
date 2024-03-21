@@ -1,5 +1,6 @@
 package com.xero.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +10,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.xero.myapplication.activity.LoginActivity
 import com.xero.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        if (FirebaseAuth.getInstance().currentUser == null){
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainer)
         val navController = navHostFragment!!.findNavController()

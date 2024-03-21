@@ -26,9 +26,10 @@ class CategoryAdapter(var context : Context, val list : ArrayList<CategoryModel>
         return list.size
     }
 
+
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.binding.textView.text = list[position].cate
-        Glide.with(context).load(list[position].img).into(holder.binding.imageView)
+        Glide.with(context).load(list[position].img).into(holder.binding.imageView4)
 
         holder.itemView.setOnClickListener{
             val intent = Intent(context, CategoryActivity::class.java)

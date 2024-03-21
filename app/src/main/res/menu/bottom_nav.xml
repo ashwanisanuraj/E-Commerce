@@ -8,6 +8,12 @@
 
     </item>
 
+    <item android:id="@+id/categoryFragment"
+        android:title="Category"
+        android:icon="@drawable/category">
+
+    </item>
+
     <item android:id="@+id/cartFragment"
         android:title="@string/cart"
         android:icon="@drawable/cart">
@@ -15,8 +21,8 @@
     </item>
 
     <item android:id="@+id/profileFragment"
-        android:title="@string/menu"
-        android:icon="@drawable/menu">
+        android:title="Profile"
+        android:icon="@drawable/user">
 
     </item>
 </menu>

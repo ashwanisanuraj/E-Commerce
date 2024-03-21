@@ -39,12 +39,20 @@
             android:padding="12dp"
             app:layout_constraintTop_toBottomOf="parent">
 
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:text="LOGOUT" />
+
             <TextView
                 android:id="@+id/totalItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total item in Cart"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="6dp"
                 android:textColor="@color/white"
                 android:textStyle="bold" />

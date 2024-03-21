@@ -139,6 +139,34 @@ check codes to understand
 activity>create a empty activity>AddressActivity.kt...(03.04.00)
 
 
+now we will add registration and logiin...(03.04.35)
+activity> create LoginActivity & RegisterActivity.kt
+and one more empty activity for OTP verification. activity>OTPActivity
+design the layout, check codes to understand
+
+activate firebase auth, import dependencies
+how to use firebase mobile otp verification.(03.20.00)
+
+after login, resister page,
+UserModel(to store user data)...(03.31.00)
+create a dataclass UserModel in model directory
+go back to RegisterActivity.kt and add codes to storeData fun
+
+now code for addressActivity...(03.34.40)
+edit adressactivity.xml
+now edit adressactivity.kt
+to save user number, we need to create a sharedpreference(no and name)
+now add editor.putString("name", binding.userNumberReg.text.toString()) to otpactivity>signinwithphoneauthcredential
+create new checkoutactivity.kt..(03.45.10)
+
+
+now integrate payment...
+
+now to det allorderdetails...(04.19.15)
+
+
+
+
 
 
 
