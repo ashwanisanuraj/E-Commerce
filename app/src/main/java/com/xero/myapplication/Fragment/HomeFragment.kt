@@ -34,16 +34,9 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
 
         getProduct()
-        getSliderImage()
         return binding.root
     }
 
-    private fun getSliderImage() {
-        Firebase.firestore.collection("slider").document("item")
-            .get().addOnSuccessListener {
-                Glide.with(requireContext()).load(it.get("img")).into(binding.sliderImage)
-            }
-    }
 
     private fun getProduct() {
         val list = ArrayList<AddProductModel>()

@@ -7,77 +7,31 @@
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Products"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/sliderImage"
+                <TextView
+                    android:id="@+id/textViewHL4"
                     android:layout_width="match_parent"
-                    android:layout_height="190dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#ACDDDE"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv1" />
 
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/home" />
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Shop By Category"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:layout_marginStart="10dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Shop By Product"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/productRV"
@@ -87,6 +41,4 @@
                 android:nestedScrollingEnabled="true"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/layout_product_item" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

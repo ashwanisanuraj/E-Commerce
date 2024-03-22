@@ -12,7 +12,7 @@
         android:id="@+id/categoryTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Category"
+        android:text="Categories"
         android:textSize="24sp"
         android:layout_margin="16dp"
         android:textStyle="bold"
