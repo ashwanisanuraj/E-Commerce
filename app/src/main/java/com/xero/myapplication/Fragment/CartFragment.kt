@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
 import com.xero.myapplication.activity.AddressActivity
-import com.xero.myapplication.activity.LoginActivity
 import com.xero.myapplication.adapter.cartAdapter
 import com.xero.myapplication.databinding.FragmentCartBinding
 import com.xero.myapplication.roomDb.AppDatabase
@@ -27,7 +26,8 @@ class CartFragment : Fragment() {
         binding = FragmentCartBinding.inflate(layoutInflater)
 
 
-        val preference = requireContext().getSharedPreferences("info", AppCompatActivity.MODE_PRIVATE)
+        val preference =
+            requireContext().getSharedPreferences("info", AppCompatActivity.MODE_PRIVATE)
         val editor = preference.edit()
         editor.putBoolean("isCart", false)
         editor.apply()
@@ -35,11 +35,11 @@ class CartFragment : Fragment() {
         val dao = AppDatabase.getInstance(requireContext()).productDao()
         list = ArrayList()
 
-        dao.getAllProduct().observe(requireActivity()){
+        dao.getAllProduct().observe(requireActivity()) {
             binding.cartRv.adapter = cartAdapter(requireContext(), it)
 
             list.clear()
-            for (data in it){
+            for (data in it) {
                 list.add(data.productId)
             }
 
@@ -57,25 +57,34 @@ class CartFragment : Fragment() {
 
 
         var total = 0
-        for (item in data!!){
+        for (item in data!!) {
             val priceString = item.productSp?.replace(",", "") // Remove the comma
-            val price = priceString?.toIntOrNull() ?: 0 // Convert string to integer, handle null or invalid cases
+            val price = priceString?.toIntOrNull()
+                ?: 0 // Convert string to integer, handle null or invalid cases
             total += price
         }
 
         binding.totalItem.text = "TOTAL ITEM: ${data.size}"
         binding.totalCost.text = "TOTAL COST: $total"
 
-        binding.checkOut.setOnClickListener{
-            //whenever we click on this new activity will open. for that we need to go to categoryadapter.kt
-            val intent = Intent(context, AddressActivity::class.java)
+        binding.checkOut.setOnClickListener {
+            if (isEmpty()) {
+                Toast.makeText(context, "Cart is empty", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(context, AddressActivity::class.java)
 
-            val b = Bundle()
-            b.putStringArrayList("productIds", list)
-            b.putString("totalCost", total.toString())
-            intent.putExtras(b)
-            startActivity(intent)
+                val b = Bundle()
+                b.putStringArrayList("productIds", list)
+                b.putString("totalCost", total.toString())
+                intent.putExtras(b)
+                startActivity(intent)
+            }
         }
     }
 
+    // Enable the checkout button if there are products in the cart
+    private fun isEmpty(): Boolean {
+        return list.isEmpty()
+
+    }
 }

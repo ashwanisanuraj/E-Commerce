@@ -32,6 +32,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
 
         setContentView(binding.root)
+
     }
 
     private fun getProductDetails(proId: String?) {
@@ -80,6 +81,8 @@ class ProductDetailActivity : AppCompatActivity() {
                 openCart()
             }else{
                 addToCart(productDao, proId, name, productSp, coverImg)
+                Toast.makeText(this, "Product Added To Cart", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Go To Cart To Remove", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -104,5 +107,6 @@ class ProductDetailActivity : AppCompatActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
+
 
 }

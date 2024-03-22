@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AlertDialogCustomStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <!-- Customize text appearance for positive button -->
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/red</item>
+        <!-- Customize text appearance for negative button -->
+        <item name="android:textAppearance">@style/NegativeButtonTextAppearance</item>
+    </style>
+
+    <style name="NegativeButtonTextAppearance" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+</resources>
