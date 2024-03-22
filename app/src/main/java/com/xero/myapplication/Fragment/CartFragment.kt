@@ -47,11 +47,6 @@ class CartFragment : Fragment() {
 
         }
 
-        binding.logoutBtn.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            requireActivity().startActivity(Intent(requireContext(), LoginActivity::class.java))
-            requireActivity().finish()
-        }
 
 
         return binding.root

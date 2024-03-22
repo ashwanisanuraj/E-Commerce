@@ -9,7 +9,6 @@
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:cardBackgroundColor="@color/colorPrimary"
         android:layout_marginTop="4dp"
         app:cardCornerRadius="12dp"
         android:layout_marginStart="8dp"
@@ -23,7 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:background="@color/colorPrimary"
             android:padding="8dp"
             >
 
@@ -41,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:text="Product Name"
                 android:textSize="18sp"
                 android:textStyle="bold"

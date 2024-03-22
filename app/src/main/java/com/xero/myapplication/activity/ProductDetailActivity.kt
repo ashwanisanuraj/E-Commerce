@@ -31,8 +31,6 @@ class ProductDetailActivity : AppCompatActivity() {
         getProductDetails(intent.getStringExtra("id"))
 
 
-
-
         setContentView(binding.root)
     }
 
