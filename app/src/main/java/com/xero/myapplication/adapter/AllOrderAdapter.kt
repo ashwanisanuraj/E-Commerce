@@ -59,7 +59,7 @@ class AllOrderAdapter(private var list: ArrayList<AllOrderModel>, private val co
                 .update(data as MutableMap<String, Any>)
                 .addOnSuccessListener {
                     // Update UI to reflect the status change
-                    Toast.makeText(context, "Status Updated", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Status Updated, Go back and open orders again for updates to reflect", Toast.LENGTH_SHORT).show()
                     notifyDataSetChanged()
                 }
                 .addOnFailureListener { e ->
