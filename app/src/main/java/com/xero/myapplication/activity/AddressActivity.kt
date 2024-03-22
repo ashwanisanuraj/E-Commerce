@@ -1,5 +1,6 @@
 package com.xero.myapplication.activity
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -14,19 +15,19 @@ class AddressActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddressBinding
     private lateinit var preferences: SharedPreferences
     private lateinit var totalCost: String
+    private var progressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityAddressBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
         preferences = this.getSharedPreferences("user", MODE_PRIVATE)
-
         totalCost = intent.getStringExtra("totalCost")!!
         loadUserInfo()
 
         binding.proceedCheckout.setOnClickListener {
+            showLoadingDialog()
             validateData(
                 binding.userName.text.toString(),
                 binding.userPhone.text.toString(),
@@ -36,6 +37,27 @@ class AddressActivity : AppCompatActivity() {
                 binding.userPin.text.toString(),
             )
         }
+
+        binding.editProfileFromAddress.setOnClickListener {
+            startActivity(Intent(this@AddressActivity, UserProfileActivity::class.java))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        dismissLoadingDialog()
+    }
+
+    private fun showLoadingDialog() {
+        progressDialog = ProgressDialog(this)
+        progressDialog?.setMessage("Loading...")
+        progressDialog?.setCancelable(false)
+        progressDialog?.show()
+    }
+
+    private fun dismissLoadingDialog() {
+        progressDialog?.dismiss()
+        progressDialog = null
     }
 
     private fun validateData(
@@ -46,17 +68,15 @@ class AddressActivity : AppCompatActivity() {
         state: String,
         pinCode: String
     ) {
-
         if (name.isEmpty() || number.isEmpty() || area.isEmpty() || city.isEmpty() || state.isEmpty() || pinCode.isEmpty()) {
-            Toast.makeText(this, "PLease Fill All Fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+            dismissLoadingDialog()
         } else {
             storeData(area, city, state, pinCode)
         }
-
     }
 
     private fun storeData(area: String, city: String, state: String, pinCode: String) {
-
         val map = hashMapOf<String, Any>()
         map["area"] = area
         map["city"] = city
@@ -66,23 +86,21 @@ class AddressActivity : AppCompatActivity() {
         Firebase.firestore.collection("users")
             .document(preferences.getString("number", "")!!)
             .update(map).addOnSuccessListener {
-
+                dismissLoadingDialog()
                 val b = Bundle()
                 b.putStringArrayList("productIds", intent.getStringArrayListExtra("productIds"))
                 b.putString("totalCost", totalCost)
                 val intent = Intent(this, CheckoutActivity::class.java)
                 intent.putExtras(b)
                 startActivity(intent)
-
             }
             .addOnFailureListener {
                 Toast.makeText(this, "Something went wrong!!", Toast.LENGTH_SHORT).show()
+                dismissLoadingDialog()
             }
-
     }
 
     private fun loadUserInfo() {
-
         Firebase.firestore.collection("users").document(preferences.getString("number", "")!!)
             .get().addOnSuccessListener {
                 binding.userName.setText(it.getString("userName"))
