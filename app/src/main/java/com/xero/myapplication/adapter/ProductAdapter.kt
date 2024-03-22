@@ -41,7 +41,7 @@ class ProductAdapter(
         Glide.with(context).load(data.productCoverImg).into(holder.binding.imageView)
         holder.binding.textView9.text = data.productName
         holder.binding.textView10.text = data.productCategory
-        holder.binding.textView11.text = data.productMrp
+        holder.binding.textView11.text = "₹${data.productMrp}"
         holder.binding.textView11.paintFlags = holder.binding.textView11.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
 
 
@@ -51,7 +51,8 @@ class ProductAdapter(
             context.startActivity(intent)
         }
 
-        holder.binding.button3.text = data.productSp
+        holder.binding.button3.text = "₹${data.productSp}"
+
     }
 
     override fun getFilter(): Filter {

@@ -35,7 +35,8 @@ class cartAdapter(val context: Context, val list: List<ProductModel>) :
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         Glide.with(context).load(list[position].productImage).into(holder.binding.imageView3)
         holder.binding.textView8.text = list[position].productName
-        holder.binding.textView12.text = list[position].productSp
+        holder.binding.textView12.text = "₹${list[position].productSp}"
+
 
         //to make item in cart clickable
         holder.itemView.setOnClickListener{

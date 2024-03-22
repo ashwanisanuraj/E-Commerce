@@ -45,7 +45,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 val productDesc = it.getString("productDescription")
 
                 binding.textView4.text = name
-                binding.textView5.text = productSp
+                binding.textView5.text = "Selling Price: ₹$productSp"
                 binding.textView6.text = productDesc
 
                     val slideList = ArrayList<SlideModel>()

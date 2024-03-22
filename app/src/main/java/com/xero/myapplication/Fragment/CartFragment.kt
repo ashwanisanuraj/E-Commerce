@@ -65,7 +65,7 @@ class CartFragment : Fragment() {
         }
 
         binding.totalItem.text = "TOTAL ITEM: ${data.size}"
-        binding.totalCost.text = "TOTAL COST: $total"
+        binding.totalCost.text = "TOTAL COST: ₹$total"
 
         binding.checkOut.setOnClickListener {
             if (isEmpty()) {
