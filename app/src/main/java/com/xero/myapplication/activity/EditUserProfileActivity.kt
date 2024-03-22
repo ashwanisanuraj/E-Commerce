@@ -34,6 +34,7 @@ class EditUserProfileActivity : AppCompatActivity() {
                 "pinCode" to binding.userPin.text.toString()
             )
             updateUserInfo(preferences.getString("number", "")!!, updatedUserInfo)
+            finish()
             startActivity(Intent(this@EditUserProfileActivity, UserProfileActivity::class.java))
         }
     }

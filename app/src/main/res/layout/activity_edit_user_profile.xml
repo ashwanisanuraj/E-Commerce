@@ -22,8 +22,7 @@
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name:"
-            android:textColor="@color/white" />
+            android:hint="Name:"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone:"
-            android:textColor="@color/white"
             android:id="@+id/userPhone"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,7 +54,6 @@
             android:layout_height="wrap_content"
             android:hint="Area/Village: "
             android:textSize="18sp"
-            android:textColor="@color/white"
             android:id="@+id/userArea"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,7 +70,6 @@
             android:layout_height="wrap_content"
             android:hint="City: "
             android:textSize="18sp"
-            android:textColor="@color/white"
             android:id="@+id/userCity"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,7 +86,6 @@
             android:layout_height="wrap_content"
             android:hint="State: "
             android:textSize="18sp"
-            android:textColor="@color/white"
             android:id="@+id/userState"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +102,6 @@
             android:layout_height="wrap_content"
             android:hint="Pin Code:"
             android:textSize="18sp"
-            android:textColor="@color/white"
             android:id="@+id/userPin"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,7 +112,6 @@
         android:textSize="16sp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:textColor="@color/white"
         android:id="@+id/editProfileButton"
         android:text="EDIT PROFILE">
 

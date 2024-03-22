@@ -45,9 +45,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total item in Cart"
+                android:textColor="#32cd32"
                 android:textSize="18sp"
                 android:layout_margin="6dp"
-                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <TextView
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total Price"
-                android:textColor="@color/white"
+                android:textColor="#32cd32"
                 android:layout_margin="6dp"
                 android:textSize="16sp"
                 android:textStyle="bold" />

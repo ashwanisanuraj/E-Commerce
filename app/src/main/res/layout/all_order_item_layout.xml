@@ -2,7 +2,6 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp">
 
     <LinearLayout
@@ -19,8 +18,7 @@
             android:text="Product Name:"
             android:textSize="22sp"
             android:layout_marginStart="10dp"
-            android:textStyle="bold"
-            android:textColor="@color/white">
+            android:textStyle="bold">
         </TextView>
 
         <TextView
@@ -29,8 +27,7 @@
             android:id="@+id/productPrice"
             android:text="Price: 100rs"
             android:textSize="18sp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <TextView
@@ -51,7 +48,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:textColor="@color/white"
             android:backgroundTint="@color/red"
             android:text="Cancel" />
 

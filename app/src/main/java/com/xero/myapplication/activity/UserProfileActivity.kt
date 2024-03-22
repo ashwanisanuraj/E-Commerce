@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
+import com.xero.myapplication.Fragment.ProfileFragment
+import com.xero.myapplication.R
 import com.xero.myapplication.databinding.ActivityUserProfileBinding
 
 class UserProfileActivity : AppCompatActivity() {
@@ -23,6 +25,7 @@ class UserProfileActivity : AppCompatActivity() {
 
         binding.goToEditProfile.setOnClickListener{
             startActivity(Intent(this@UserProfileActivity, EditUserProfileActivity::class.java))
+            finish()
         }
 
     }

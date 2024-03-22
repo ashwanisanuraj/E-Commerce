@@ -27,14 +27,15 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             android:text="Product Name"
-            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
+
+            app:layout_constraintEnd_toStartOf="@+id/delete"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +46,6 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             android:text="Product Price"
-            android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
