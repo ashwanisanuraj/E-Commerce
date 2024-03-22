@@ -41,6 +41,7 @@ class OTPVerificationActivity : AppCompatActivity() {
 
         builder = androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle("Verifying OTP...")
+            .setMessage("Please Wait")
             .setCancelable(false)
             .create()
         builder.show()

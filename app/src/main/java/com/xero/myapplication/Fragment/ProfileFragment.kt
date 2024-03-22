@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.xero.myapplication.R
 import com.xero.myapplication.activity.LoginActivity
 import com.xero.myapplication.activity.OrdersActivity
 import com.xero.myapplication.activity.UserProfileActivity
@@ -50,11 +53,7 @@ class ProfileFragment : Fragment() {
 
         // Set click listener for logout button
         binding.logoutBtn.setOnClickListener {
-            // Sign out user
-            FirebaseAuth.getInstance().signOut()
-            // Redirect to login activity
-            requireActivity().startActivity(Intent(requireContext(), LoginActivity::class.java))
-            requireActivity().finish()
+            showLogoutConfirmationDialog()
         }
     }
 
@@ -72,5 +71,26 @@ class ProfileFragment : Fragment() {
                 // For example, display a toast message
                 // Toast.makeText(requireContext(), "Failed to load user information", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun showLogoutConfirmationDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext())
+        alertDialogBuilder.setTitle("Logout")
+        alertDialogBuilder.setMessage("Are you sure you want to logout?")
+        alertDialogBuilder.setPositiveButton("LOGOUT") { dialog, which ->
+            // Sign out user
+            FirebaseAuth.getInstance().signOut()
+            // Redirect to login activity
+            requireActivity().startActivity(Intent(requireContext(), LoginActivity::class.java))
+            requireActivity().finish()
+        }
+        alertDialogBuilder.setNegativeButton("CANCEL") { dialog, which ->
+            dialog.dismiss()
+        }
+        // Create the dialog instance and show it
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(requireContext().getColor(R.color.red))
+        alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(requireContext().getColor(R.color.green))
     }
 }
