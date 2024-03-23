@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total item in Cart"
-                android:textColor="#32cd32"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="6dp"
                 android:textStyle="bold" />
@@ -56,23 +56,23 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
                 android:text="Total Price"
-                android:textColor="#32cd32"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/checkOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:textStyle="bold"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:textSize="20sp"
-                android:background="#3eb489"
-                android:textColor="#32cd32"
+                android:textColor="@color/white"
                 android:layout_margin="6dp"
                 android:text="Check Out">
 
-            </com.google.android.material.button.MaterialButton>
+            </Button>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

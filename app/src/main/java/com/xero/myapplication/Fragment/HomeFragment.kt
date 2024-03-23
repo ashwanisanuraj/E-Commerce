@@ -38,6 +38,13 @@ class HomeFragment : Fragment() {
         adapter = ProductAdapter(requireContext(), productList)
         binding.productRV.adapter = adapter
 
+        binding.searchView.apply {
+            // Set the hint text
+            queryHint = "Search for Products..."
+            // Expand the SearchView by default
+            isIconified = true
+        }
+
         // Set up the SearchView
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -99,9 +106,9 @@ class HomeFragment : Fragment() {
 
     private fun sortProducts(sortOption: String) {
         when (sortOption) {
-            "Random" -> productList.shuffle()
-            "Low to High" -> productList.sortBy { it.productSp }
-            "High to Low" -> productList.sortByDescending { it.productSp }
+            "Sort by: Default" -> productList.shuffle()
+            "Price: Low to High" -> productList.sortBy { it.productSp }
+            "Price: High to Low" -> productList.sortByDescending { it.productSp }
             // Add more sorting options as needed
         }
         adapter.notifyDataSetChanged()
