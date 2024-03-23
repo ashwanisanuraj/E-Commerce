@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -19,13 +21,22 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: ProductAdapter
+    private var productList: ArrayList<AddProductModel> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialize adapter
+        adapter = ProductAdapter(requireContext(), productList)
+        binding.productRV.adapter = adapter
 
         // Set up the SearchView
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -40,6 +51,27 @@ class HomeFragment : Fragment() {
             }
         })
 
+        // Set up the spinner for sorting options
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.sort_options,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.sortSpinner.adapter = adapter
+        }
+
+        binding.sortSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedItem = parent?.getItemAtPosition(position).toString()
+                sortProducts(selectedItem)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Handle when nothing is selected in the spinner
+            }
+        }
+
         val preference =
             requireContext().getSharedPreferences("info", AppCompatActivity.MODE_PRIVATE)
 
@@ -49,22 +81,29 @@ class HomeFragment : Fragment() {
         firestore = FirebaseFirestore.getInstance()
 
         getProduct()
-        return binding.root
     }
 
     private fun getProduct() {
-        val list = ArrayList<AddProductModel>()
         firestore.collection("products")
             .get().addOnSuccessListener {
-                list.clear()
+                productList.clear()
                 for (doc in it.documents) {
                     val data = doc.toObject(AddProductModel::class.java)
                     data?.let { product ->
-                        list.add(product)
+                        productList.add(product)
                     }
                 }
-                adapter = ProductAdapter(requireContext(), list)
-                binding.productRV.adapter = adapter
+                adapter.notifyDataSetChanged() // Notify adapter of data change
             }
+    }
+
+    private fun sortProducts(sortOption: String) {
+        when (sortOption) {
+            "Random" -> productList
+            "Low to High" -> productList.sortBy { it.productSp }
+            "High to Low" -> productList.sortByDescending { it.productSp }
+            // Add more sorting options as needed
+        }
+        adapter.notifyDataSetChanged()
     }
 }

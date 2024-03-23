@@ -3,9 +3,9 @@ package com.xero.myapplication.adapter
 import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
-import android.widget.Filter
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -22,6 +22,15 @@ class ProductAdapter(
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(), Filterable {
 
     private var filteredList: ArrayList<AddProductModel> = originalList
+
+    // Sort options
+    private var sortOption: String? = null
+
+    // Method to set the sort option
+    fun setSortOption(option: String) {
+        sortOption = option
+        notifyDataSetChanged() // Notify adapter of data change
+    }
 
     inner class ProductViewHolder(val binding: LayoutProductItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -42,8 +51,8 @@ class ProductAdapter(
         holder.binding.textView9.text = data.productName
         holder.binding.textView10.text = data.productCategory
         holder.binding.textView11.text = "₹${data.productMrp}"
-        holder.binding.textView11.paintFlags = holder.binding.textView11.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-
+        holder.binding.textView11.paintFlags =
+            holder.binding.textView11.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ProductDetailActivity::class.java)
@@ -52,7 +61,6 @@ class ProductAdapter(
         }
 
         holder.binding.button3.text = "₹${data.productSp}"
-
     }
 
     override fun getFilter(): Filter {
@@ -77,3 +85,5 @@ class ProductAdapter(
         }
     }
 }
+
+
