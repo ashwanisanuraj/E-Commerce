@@ -99,7 +99,7 @@ class HomeFragment : Fragment() {
 
     private fun sortProducts(sortOption: String) {
         when (sortOption) {
-            "Random" -> productList
+            "Random" -> productList.shuffle()
             "Low to High" -> productList.sortBy { it.productSp }
             "High to Low" -> productList.sortByDescending { it.productSp }
             // Add more sorting options as needed
