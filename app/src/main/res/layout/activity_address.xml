@@ -114,6 +114,7 @@
         android:layout_marginEnd="24dp"
         android:textStyle="bold"
         android:id="@+id/proceedCheckout"
+        android:textColor="@color/white"
         android:text="Proceed to Checkout">
 
     </com.google.android.material.button.MaterialButton>
@@ -126,6 +127,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="Edit Profile"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
 </LinearLayout>

@@ -2,18 +2,24 @@ package com.xero.myapplication.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View.GONE
-import android.view.View.VISIBLE
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.xero.myapplication.databinding.AllOrderItemLayoutBinding
 import com.xero.myapplication.model.AllOrderModel
 
-class AllOrderAdapter(private var list: ArrayList<AllOrderModel>, private val context: Context) :
-    RecyclerView.Adapter<AllOrderAdapter.AllOrderViewHolder>() {
+class AllOrderAdapter(
+    private var list: ArrayList<AllOrderModel>,
+    private val context: Context
+) : RecyclerView.Adapter<AllOrderAdapter.AllOrderViewHolder>() {
+
+    interface OrderStatusChangeListener {
+        fun onOrderStatusChanged()
+    }
+
+    private var orderStatusChangeListener: OrderStatusChangeListener? = null
 
     inner class AllOrderViewHolder(val binding: AllOrderItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -33,12 +39,12 @@ class AllOrderAdapter(private var list: ArrayList<AllOrderModel>, private val co
         holder.binding.productStatus.text = order.status
 
         if (order.status == "Cancelled") {
-            holder.binding.cancelBtn.visibility = GONE
+            holder.binding.cancelBtn.visibility = View.GONE
         } else {
-            holder.binding.cancelBtn.visibility = VISIBLE
+            holder.binding.cancelBtn.visibility = View.VISIBLE
             holder.binding.cancelBtn.setOnClickListener {
                 // Update the UI immediately
-                holder.binding.cancelBtn.visibility = GONE
+                holder.binding.cancelBtn.visibility = View.GONE
                 holder.binding.productStatus.text = "Cancelled"
 
                 // Update the status in Firestore
@@ -46,8 +52,8 @@ class AllOrderAdapter(private var list: ArrayList<AllOrderModel>, private val co
             }
         }
 
-        if(order.status == "Delivered"){
-            holder.binding.cancelBtn.visibility = GONE
+        if (order.status == "Delivered") {
+            holder.binding.cancelBtn.visibility = View.GONE
         }
     }
 
@@ -59,19 +65,30 @@ class AllOrderAdapter(private var list: ArrayList<AllOrderModel>, private val co
                 .update(data as MutableMap<String, Any>)
                 .addOnSuccessListener {
                     // Update UI to reflect the status change
-                    Toast.makeText(context, "Status Updated, Go back and open orders again for updates to reflect", Toast.LENGTH_SHORT).show()
-                    notifyDataSetChanged()
+                    Toast.makeText(
+                        context,
+                        "Status Updated, Go back and open orders again for updates to reflect",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    orderStatusChangeListener?.onOrderStatusChanged()
                 }
                 .addOnFailureListener { e ->
                     // Handle failure to update status
-                    Toast.makeText(context, "Failed to update status: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        context,
+                        "Failed to update status: ${e.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
         }
     }
 
-
     fun setData(newList: ArrayList<AllOrderModel>) {
         list = newList
         notifyDataSetChanged()
+    }
+
+    fun setOrderStatusChangeListener(listener: OrderStatusChangeListener) {
+        orderStatusChangeListener = listener
     }
 }
