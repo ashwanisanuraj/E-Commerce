@@ -168,6 +168,61 @@ now to det allorderdetails...(04.19.15)
 
 
 
+dump...
+package com.xero.myapplication.Fragment
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.FirebaseFirestore
+import com.xero.myapplication.databinding.FragmentProductSpecificationBinding
+
+class ProductSpecificationFragment : Fragment() {
+
+    private var _binding: FragmentProductSpecificationBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentProductSpecificationBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val proId = arguments?.getString("id")
+        proId?.let { getProductDetails(it) }
+    }
+
+    private fun getProductDetails(proId: String) {
+        val firestore = FirebaseFirestore.getInstance()
+        firestore.collection("products").document(proId).get()
+            .addOnSuccessListener { document ->
+                val productDesc = document.getString("productDescription")
+                if (productDesc != null) {
+                    binding.specificationTv.text = productDesc
+                } else {
+                    // Handle case where product description is null
+                    binding.specificationTv.text = "No description available"
+                }
+            }
+            .addOnFailureListener { exception ->
+                // Handle failure
+                binding.specificationTv.text = "Failed to retrieve product details"
+                // Log the exception or display an error message
+            }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
 
 
 
