@@ -11,10 +11,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
-import com.xero.myapplication.Fragment.ProductSpecificationFragment
-import com.xero.myapplication.Fragment.UserReviewsFragment
 import com.xero.myapplication.MainActivity
-import com.xero.myapplication.adapter.FragmentPagerAdapter
 import com.xero.myapplication.databinding.ActivityProductDetailBinding
 import com.xero.myapplication.roomDb.AppDatabase
 import com.xero.myapplication.roomDb.ProductDao
@@ -24,25 +21,17 @@ import kotlinx.coroutines.launch
 
 class ProductDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityProductDetailBinding
+        private lateinit var binding: ActivityProductDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProductDetailBinding.inflate(layoutInflater)
 
-        getProductDetails(intent.getStringExtra("id")) // Retrieve ID from Intent
-
-        val fragments = listOf(ProductSpecificationFragment(), UserReviewsFragment())
-        val adapter = FragmentPagerAdapter(supportFragmentManager, fragments)
-        binding.viewPager.adapter = adapter
-
-        // Optional: If you have a TabLayout
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
-
+        getProductDetails(intent.getStringExtra("id"))
 
         setContentView(binding.root)
-
     }
+
 
     private fun getProductDetails(proId: String?) {
         Firebase.firestore.collection("products")
@@ -51,9 +40,11 @@ class ProductDetailActivity : AppCompatActivity() {
 
                 val name = it.getString("productName")
                 val productSp = it.getString("productSp")
+                val productDesc = it.getString("productDescription")
 
                 binding.textView4.text = name
                 binding.textView5.text = "Selling Price: ₹$productSp"
+                binding.textView6.text = productDesc
 
                     val slideList = ArrayList<SlideModel>()
                     for (data in list) {
