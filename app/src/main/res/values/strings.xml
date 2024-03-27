@@ -9,5 +9,7 @@
     <string name="dashboard_fragment">Dashboard Fragment</string>
     <string name="home_fragment">Home Fragment</string>
     <string name="cart_fragment">Cart Fragment</string>
+    <string name="category">Category</string>
+    <string name="profile">Profile</string>
 
 </resources>

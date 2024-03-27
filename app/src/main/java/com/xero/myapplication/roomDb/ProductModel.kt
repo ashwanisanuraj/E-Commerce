@@ -17,5 +17,16 @@ data class ProductModel(
     val productImage : String? = "",
     @ColumnInfo(name = "productSp")
     val productSp : String? = "",
-
 )
+
+@Entity(tableName = "wishlist")
+data class WishlistItem(
+    @PrimaryKey
+    @NonNull
+    val productId : String,
+    @ColumnInfo(name = "productName")
+    val productName : String? = "",
+    @ColumnInfo(name = "productImage")
+    val productImage : String? = "",
+)
+

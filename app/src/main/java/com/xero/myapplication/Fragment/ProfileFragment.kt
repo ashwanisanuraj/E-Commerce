@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.xero.myapplication.R
@@ -17,6 +18,7 @@ import com.xero.myapplication.activity.LoginActivity
 import com.xero.myapplication.activity.OrdersActivity
 import com.xero.myapplication.activity.UserProfileActivity
 import com.xero.myapplication.databinding.FragmentProfileBinding
+import com.xero.myapplication.databinding.FragmentWishListBinding
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
@@ -50,6 +52,11 @@ class ProfileFragment : Fragment() {
         binding.goToProfile.setOnClickListener {
             startActivity(Intent(requireContext(), UserProfileActivity::class.java))
         }
+
+        binding.button.setOnClickListener {
+            navigateToWishlistFragment()
+        }
+
 
         // Set click listener for logout button
         binding.logoutBtn.setOnClickListener {
@@ -92,5 +99,10 @@ class ProfileFragment : Fragment() {
         alertDialog.show()
         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(requireContext().getColor(R.color.red))
         alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(requireContext().getColor(R.color.green))
+    }
+
+    private fun navigateToWishlistFragment() {
+        // Navigate to the wishlist fragment
+        findNavController().navigate(R.id.action_profileFragment_to_wishListFragment)
     }
 }

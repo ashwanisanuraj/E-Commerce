@@ -29,10 +29,19 @@
         android:id="@+id/profileFragment"
         android:name="com.xero.myapplication.Fragment.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_wishListFragment"
+            app:destination="@id/wishListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.xero.myapplication.Fragment.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.xero.myapplication.Fragment.WishListFragment"
+        android:label="fragment_wish_list"
+        tools:layout="@layout/fragment_wish_list" />
 </navigation>

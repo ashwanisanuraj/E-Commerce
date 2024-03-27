@@ -71,7 +71,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
 
         Firebase.firestore.collection("products").document(productId!!).get().addOnSuccessListener {
             lifecycleScope.launch(Dispatchers.IO) {
-                dao.deleteProduct(ProductModel(productId))
+                dao.deleteCartProduct(ProductModel(productId))
             }
             saveData(it.getString("productName"),
                 it.getString("productSp"),
