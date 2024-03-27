@@ -28,5 +28,7 @@ data class WishlistItem(
     val productName : String? = "",
     @ColumnInfo(name = "productImage")
     val productImage : String? = "",
+    @ColumnInfo(name = "productSp")
+    val productSp : String? = "",
 )
 

@@ -4,7 +4,10 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,9 +15,11 @@ import com.xero.myapplication.R
 import com.xero.myapplication.activity.ProductDetailActivity
 import com.xero.myapplication.databinding.LayoutWishlistItemBinding
 import com.xero.myapplication.roomDb.AppDatabase
+import com.xero.myapplication.roomDb.ProductModel
 import com.xero.myapplication.roomDb.WishlistItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class WishListAdapter(private val context: Context, private var list: List<WishlistItem>) :
@@ -25,7 +30,8 @@ class WishListAdapter(private val context: Context, private var list: List<Wishl
 
     private val dao by lazy { AppDatabase.getInstance(context).productDao() }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WishlistViewHolder {
-        val binding = LayoutWishlistItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        val binding =
+            LayoutWishlistItemBinding.inflate(LayoutInflater.from(context), parent, false)
         return WishlistViewHolder(binding)
     }
 
@@ -46,20 +52,35 @@ class WishListAdapter(private val context: Context, private var list: List<Wishl
             deleteWL.setOnClickListener {
                 showDeleteConfirmationDialog(currentItem)
             }
+
+            // Check if the product is already in the cart and hide the button if it is
+            CoroutineScope(Dispatchers.IO).launch {
+                val productDao = AppDatabase.getInstance(context).productDao()
+                val product = productDao.isProductInCart(currentItem.productId)
+                addToCartButton.visibility = if (product != null) View.GONE else View.VISIBLE
+            }
+
+            // Handle click event to add item to cart
+            addToCartButton.setOnClickListener {
+                addToCartButton.visibility = View.GONE
+                Toast.makeText(context, "Product Added to Cart", Toast.LENGTH_SHORT).show()
+                addItemToCart(currentItem)
+            }
         }
     }
 
+
     private fun showDeleteConfirmationDialog(item: WishlistItem) {
-        val alertDialogBuilder = AlertDialog.Builder(context, R.style.AlertDialogCustomStyle)
+        val alertDialogBuilder = AlertDialog.Builder(context)
         alertDialogBuilder.setTitle("Confirm Delete")
         alertDialogBuilder.setMessage("Are you sure you want to delete this item?")
-        alertDialogBuilder.setPositiveButton("Yes") { dialog, _ ->
+        alertDialogBuilder.setPositiveButton("Yes") { dialog, which ->
             CoroutineScope(Dispatchers.IO).launch {
                 dao.deleteWishlistProduct(item)
             }
             dialog.dismiss()
         }
-        alertDialogBuilder.setNegativeButton("No") { dialog, _ ->
+        alertDialogBuilder.setNegativeButton("No") { dialog, which ->
             dialog.dismiss()
         }
         // Show the dialog only once after configuring it
@@ -71,6 +92,21 @@ class WishListAdapter(private val context: Context, private var list: List<Wishl
             ?.setTextColor(ContextCompat.getColor(context, R.color.green))
     }
 
-    override fun getItemCount(): Int = list.size
+    private fun addItemToCart(item: WishlistItem) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val productDao = AppDatabase.getInstance(context).productDao()
+            val product = ProductModel(
+                item.productId,
+                item.productName,
+                item.productImage,
+                item.productSp,
 
+            )
+            productDao.insertCartProduct(product)
+        }
+    }
+
+
+    override fun getItemCount(): Int = list.size
 }
+

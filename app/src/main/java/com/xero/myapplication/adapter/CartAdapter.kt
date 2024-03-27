@@ -55,7 +55,7 @@ class CartAdapter(private val context: Context, private val list: List<ProductMo
     }
 
     private fun showDeleteConfirmationDialog(item: ProductModel) {
-        val alertDialogBuilder = AlertDialog.Builder(context, R.style.AlertDialogCustomStyle)
+        val alertDialogBuilder = AlertDialog.Builder(context)
         alertDialogBuilder.setTitle("Confirm Delete")
         alertDialogBuilder.setMessage("Are you sure you want to delete this item?")
         alertDialogBuilder.setPositiveButton("Yes") { dialog, _ ->
