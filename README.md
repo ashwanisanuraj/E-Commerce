@@ -10,6 +10,11 @@ My E-Commerce app provides a seamless shopping experience for users to browse, d
 - Checkout and Payment
 - Order Management: View and manage order history
 
+## E-Commerce Admin App
+
+Admin app to upload products for E-Commerce app
+*E-Commerce Admin App repository haven't been uploaded to been Firebase Storage safe from spamming by random users
+
 
 ## Demo
 Here is a demo with Macbook Air M1
@@ -140,21 +145,15 @@ Demo Screenshots of the App
  <table>
   <tr>
     <td>Order Page: After Cancelling Product Macbook Air M1</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>E-Commerce Admin: Home Screen</td>
+    <td>E-Commerce Admin: Add Category</td>
+    <td>E-Commerce Admin: Add Product</td>
   </tr>
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderlistordercancelled.png" width="220"></td>
-    <td><img src="" width="220"></td>
-    <td><img src="" width="220"></td>
-    <td><img src="" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_home.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_addcategory.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_addproduct.png" width="220"></td>
   </tr>
  </table>
-
- 
- 
-
-
- 
 </p>
