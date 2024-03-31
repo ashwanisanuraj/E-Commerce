@@ -22,7 +22,7 @@ Admin app to upload products for E-Commerce app.
 
 
 ## Demo
-Here is a demo with Macbook Air M1
+Here is a demo for Product Macbook Air M1
 
 Demo Screenshots of the App
 
