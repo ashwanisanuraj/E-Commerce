@@ -10,6 +10,10 @@ My E-Commerce app provides a seamless shopping experience for users to browse, d
 - Checkout and Payment
 - Order Management: View and manage order history
 
+## Installation
+Apk package file is uploaded on github,  
+Check release tab to get the apk.
+
 ## E-Commerce Admin App
 
 Admin app to upload products for E-Commerce app.   
