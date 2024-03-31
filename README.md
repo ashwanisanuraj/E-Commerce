@@ -51,8 +51,8 @@ Demo Screenshots of the App
   <tr>
     <td>Category Page</td>
     <td>Laptop Category</td>
-    <td>Product Detail Page</td>
-    <td>Product Added to Wishlist</td>
+    <td>Product Page</td>
+    <td>Product Page: Added to Wishlist</td>
   </tr>
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/category-ecommerce.png" width="220"></td>
@@ -61,6 +61,38 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productaddedtowishlist.png" width="220"></td>
   </tr>
  </table>
+
+<table>
+  <tr>
+    <td>Product Page: Add to Cart</td>
+    <td>Cart Page</td>
+    <td>Cart Page: Product Delete</td>
+    <td>Cart Page: After Product Delete</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productaddedtocart.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartwith1item.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartdeleteitem.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartempty.png" width="220"></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+    <td>Profile Page</td>
+    <td>Profile Page: Logout</td>
+    <td>Edit User Profile Page</td>
+    <td>User Profile after edit</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/profilepage-ecommerce.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/profilelogout.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/editprofile-ecommerce.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/userprofile-ecommerce.png" width="220"></td>
+  </tr>
+ </table>
+
+ 
  
 
 
