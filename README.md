@@ -30,6 +30,7 @@ Demo Screenshots of the App
     <td>Verify Otp Screen</td>
     <td>Feed Sort: Default</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/login-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/register-ecommerce.png" width="220"></td>
@@ -37,6 +38,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/feeddefault-ecommerce.png" width="220"></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <td>Feed Sort: High to Low Price</td>
@@ -44,6 +46,7 @@ Demo Screenshots of the App
     <td>Search Sort: High to Low Price</td>
     <td>Search Sort: Low to High Price</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/feedhightolow.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/feedlowtohigh.png" width="220"></td>
@@ -51,6 +54,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/searchlowtohigh.png" width="220"></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <td>Category Page</td>
@@ -58,6 +62,7 @@ Demo Screenshots of the App
     <td>Product Page</td>
     <td>Product Page: Added to Wishlist</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/category-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/categorylaptop.png" width="220"></td>
@@ -65,6 +70,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productaddedtowishlist.png" width="220"></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <td>Product Page: Add to Cart</td>
@@ -72,6 +78,7 @@ Demo Screenshots of the App
     <td>Cart Page: Product Delete</td>
     <td>Cart Page: After Product Delete</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productaddedtocart.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartwith1item.png" width="220"></td>
@@ -79,6 +86,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartempty.png" width="220"></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <td>Profile Page</td>
@@ -86,6 +94,7 @@ Demo Screenshots of the App
     <td>Edit User Profile Page</td>
     <td>User Profile after edit</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/profilepage-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/profilelogout.png" width="220"></td>
@@ -93,6 +102,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/userprofile-ecommerce.png" width="220"></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <td>Wishlist Page </td>
@@ -100,6 +110,7 @@ Demo Screenshots of the App
     <td>Wishlist Page: Delete Product Mackbook Air M2 from Wishlist</td>
     <td>Wishlist Page: After Product delete and Product add to Cart</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlist-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistaddedtocart.png" width="220"></td>
@@ -107,6 +118,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistafterproductaddedtocartanddelete.png" width="220"></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <td>Product Macbook Air M1 added to Cart from Wishlist</td>
@@ -114,13 +126,14 @@ Demo Screenshots of the App
     <td>Razorpay: Initilization</td>
     <td>Razorpay: Payment page with Macbook Air M1 Price</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productfromwishlisttocart.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/checkoutaddress.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpay.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentwithproductamount.png" width="220"></td>
   </tr>
- </table>
+</table>
 
 <table>
   <tr>
@@ -129,25 +142,28 @@ Demo Screenshots of the App
     <td>Razorpay: Payment Success</td>
     <td>Order Page: With Ordered Product Macbook Air M1</td>
   </tr>
+  
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentmethods.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentproceeded.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentsuccess.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderslistwithorderedproduct.png" width="220"></td>
   </tr>
- </table>
- <table>
+</table>
+
+<table>
   <tr>
-    <td>Order Page: After Cancelling Product Macbook Air M1</td>
-    <td>E-Commerce Admin: Home Screen</td>
-    <td>E-Commerce Admin: Add Category</td>
-    <td>E-Commerce Admin: Add Product</td>
-  </tr>
+   <td>Order Page: After Cancelling Product Macbook Air M1 </td>
+   <td>E-Commerce Admin: Home Screen </td>
+   <td>E-Commerce Admin: Add Category </td>
+   <td>E-Commerce Admin: Add Product </td>
+ </tr>
+  
   <tr>
-    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderlistordercancelled.png" width="220"></td>
-    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_home.png" width="220"></td>
-    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_addcategory.png" width="220"></td>
-    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_addproduct.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderlistordercancelled.png" width="220" ></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_home.png" width="220" ></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_addcategory.png" width="220" ></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/main/adminapp_addproduct.png" width="220" ></td>
   </tr>
- </table>
+</table>
 </p>
