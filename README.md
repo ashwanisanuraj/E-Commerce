@@ -22,7 +22,7 @@ Demo Screenshots of the App
     <td>Login Screen</td>
     <td>Register Screen</td>
     <td>Verify Otp Screen</td>
-    <td>Feed Default Sort</td>
+    <td>Feed Sort: Default</td>
   </tr>
   <tr>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/login-ecommerce.png" width="220"></td>
@@ -89,6 +89,36 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/profilelogout.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/editprofile-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/userprofile-ecommerce.png" width="220"></td>
+  </tr>
+ </table>
+
+  <table>
+  <tr>
+    <td>Wishlist Page</td>
+    <td>Wishlist Page: Add Product Macbook Air M1 to Cart</td>
+    <td>Wishlist Page: Delete Product Mackbook Air M2 from Wishlist</td>
+    <td>Wishlist Page: After Product delete and Product add to Cart</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlist-ecommerce.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistaddedtocart.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistdeleteproduct.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistafterproductaddedtocartanddelete.png" width="220"></td>
+  </tr>
+ </table>
+
+   <table>
+  <tr>
+    <td>Product Macbook Air M1 added to Cart from Wishlist</td>
+    <td>Check Out Page</td>
+    <td>Razorpay: Initilization</td>
+    <td>Razorpay: Payment page with Macbook Air M1 Price</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productfromwishlisttocart.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/checkoutaddress.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpay.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentwithproductamount.png" width="220"></td>
   </tr>
  </table>
 
