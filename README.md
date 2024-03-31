@@ -12,8 +12,9 @@ My E-Commerce app provides a seamless shopping experience for users to browse, d
 
 ## E-Commerce Admin App
 
-Admin app to upload products for E-Commerce app
-*E-Commerce Admin App repository haven't been uploaded to been Firebase Storage safe from spamming by random users
+Admin app to upload products for E-Commerce app.   
+
+*E-Commerce Admin App repository haven't been uploaded to github to keep Firebase Storage safe from spamming by random users*
 
 
 ## Demo
@@ -35,8 +36,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/verifyotp-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/feeddefault-ecommerce.png" width="220"></td>
   </tr>
- </table>
-
+</table>
 <table>
   <tr>
     <td>Feed Sort: High to Low Price</td>
@@ -50,8 +50,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/searchhightolow.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/searchlowtohigh.png" width="220"></td>
   </tr>
- </table>
-
+</table>
 <table>
   <tr>
     <td>Category Page</td>
@@ -65,8 +64,7 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productdetail-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/productaddedtowishlist.png" width="220"></td>
   </tr>
- </table>
-
+</table>
 <table>
   <tr>
     <td>Product Page: Add to Cart</td>
@@ -80,9 +78,8 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartdeleteitem.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/cartempty.png" width="220"></td>
   </tr>
- </table>
-
- <table>
+</table>
+<table>
   <tr>
     <td>Profile Page</td>
     <td>Profile Page: Logout</td>
@@ -95,11 +92,10 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/editprofile-ecommerce.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/userprofile-ecommerce.png" width="220"></td>
   </tr>
- </table>
-
-  <table>
+</table>
+<table>
   <tr>
-    <td>Wishlist Page</td>
+    <td>Wishlist Page </td>
     <td>Wishlist Page: Add Product Macbook Air M1 to Cart</td>
     <td>Wishlist Page: Delete Product Mackbook Air M2 from Wishlist</td>
     <td>Wishlist Page: After Product delete and Product add to Cart</td>
@@ -110,9 +106,8 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistdeleteproduct.png" width="220"></td>
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/wishlistafterproductaddedtocartanddelete.png" width="220"></td>
   </tr>
- </table>
-
-   <table>
+</table>
+<table>
   <tr>
     <td>Product Macbook Air M1 added to Cart from Wishlist</td>
     <td>Check Out Page</td>
@@ -141,7 +136,6 @@ Demo Screenshots of the App
     <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderslistwithorderedproduct.png" width="220"></td>
   </tr>
  </table>
-
  <table>
   <tr>
     <td>Order Page: After Cancelling Product Macbook Air M1</td>
