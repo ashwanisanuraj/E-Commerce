@@ -122,6 +122,36 @@ Demo Screenshots of the App
   </tr>
  </table>
 
+<table>
+  <tr>
+    <td>Razorpay: Payment Methods</td>
+    <td>Razorpay: Payment Verification</td>
+    <td>Razorpay: Payment Success</td>
+    <td>Order Page: With Ordered Product Macbook Air M1</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentmethods.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentproceeded.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/razorpaypaymentsuccess.png" width="220"></td>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderslistwithorderedproduct.png" width="220"></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+    <td>Order Page: After Cancelling Product Macbook Air M1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ashwanisanuraj/Images/blob/ecommerce/orderlistordercancelled.png" width="220"></td>
+    <td><img src="" width="220"></td>
+    <td><img src="" width="220"></td>
+    <td><img src="" width="220"></td>
+  </tr>
+ </table>
+
  
  
 
