@@ -51,7 +51,7 @@ class CartFragment : Fragment() {
     private fun totalCost(cartItems: List<ProductModel>) {
         var total = 0
         for (item in cartItems) {
-            val priceString = item.productSp?.replace(",", "") // Remove the comma
+            val priceString = item.productSp?.replace(",", "")
             val price = priceString?.toIntOrNull() ?: 0 // Convert string to integer, handle null or invalid cases
             total += price
         }
